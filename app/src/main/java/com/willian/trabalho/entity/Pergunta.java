@@ -1,80 +1,58 @@
+//region usings
 package com.willian.trabalho.entity;
-
 import android.util.Log;
-
-import com.willian.trabalho.enums.OptionEnum;
-import com.willian.trabalho.enums.QuestionTypeEnum;
-
+import com.willian.trabalho.enums.tipo_pergunta_Enum;
 import java.util.ArrayList;
 import java.util.List;
+//endregion
 
-/**
- * Classe da pergunta
- */
-public class Question {
+public class Pergunta {
 
-    private String question;
-    private List<Option> options = new ArrayList<>();
-    private QuestionTypeEnum type;
-    private Answer answer;
+    private String questao;
+    private List<Opcao> opcoes = new ArrayList<>();
+    private tipo_pergunta_Enum tipo;
+    private Resposta resposta;
 
-    public String getQuestion() {
-        return question;
+    public String get_pergunta() {
+        return questao;
     }
 
-    public List<Option> getOptions() {
-        return options;
+    public List<Opcao> get_opcoes() {
+        return opcoes;
     }
 
-    public QuestionTypeEnum getType() {
-        return type;
+    public tipo_pergunta_Enum get_tipo() {
+        return tipo;
     }
 
-    public Question(String question, QuestionTypeEnum type) {
-        this.question = question;
-        this.type = type;
+    public Pergunta(String questoes, tipo_pergunta_Enum tipo) {
+        this.questao = questoes;
+        this.tipo = tipo;
     }
 
-    /**
-     * Função para adicionar um opção de resposta para a pergunta
-     * @param text Valor da opção
-     * @param isCorrect Informa se esta opção é a correta
-     * @return
-     */
-    public Question addOption(String text, boolean isCorrect) {
-        if (this.options.size() > 2) {
+  // adiciona opção de resposta
+    public Pergunta add_opcao(String conteudo, boolean certo) {
+        if (this.opcoes.size() > 2) {
             Log.e("Pergunta", "A pergunta excedeu o limite de duas opções");
         }
-        this.options.add(new Option(text, isCorrect));
+        this.opcoes.add(new Opcao(conteudo, certo));
         return this;
     }
 
-    /**
-     * Função para setar a resposta da pergunta
-     * @param answer
-     */
-    public void setAnswer(String answer) {
-        this.answer = new Answer(answer);
+  //seta resposta
+    public void set_resposta(String resposta) {
+        this.resposta = new Resposta(resposta);
     }
 
-    /**
-     * Função para obter a resposta da pergunta
-     * @return
-     */
-    public Answer getAnswer() {
-        return this.answer;
+    public Resposta get_resposta() {
+        return this.resposta;
     }
 
-    /**
-     * Função para verificar se a resposta que o usuário selecionou ou digitou está correta
-     * @param answer
-     * @return
-     */
-    public boolean verifyAnswer(String answer) {
-        if (options.isEmpty()) {
+    public boolean confere_resposta(String resposta) {
+        if (opcoes.isEmpty()) {
             return false;
         }
 
-        return options.contains(new Option(answer, true));
+        return opcoes.contains(new Opcao(resposta, true));
     }
 }

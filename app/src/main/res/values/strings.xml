@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">trabalho</string>
+    <string name="nome_aplicativo">Perguntas</string>
+    <string name="resposta">Resposta</string>
+    <string name="resposta_escolhida" >Resposta escolhida: %s</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="resposta_vazia">Você deve informar uma resposta</string>
+    <string name="ja_respondida">Pergunta já respondida!</string>
 </resources>

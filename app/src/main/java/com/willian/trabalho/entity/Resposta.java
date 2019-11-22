@@ -1,12 +1,11 @@
+// region usings
 package com.willian.trabalho.entity;
+//endregion
 
-/**
- * Classe responsável pela resposta da pergunta
- */
-public class Answer {
-    private String answer;
+public class Resposta {
+    private String resposta;
 
-    public Answer(String answer) {
-        this.answer = answer;
+    public Resposta(String resposta) {
+        this.resposta = resposta;
     }
 }

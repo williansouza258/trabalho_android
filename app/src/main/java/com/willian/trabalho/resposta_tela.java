@@ -1,19 +1,18 @@
+//region usings
 package com.willian.trabalho;
-
-
-
 import android.content.Context;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+//endregion
 
-public class OnSwipeTouchListener implements OnTouchListener {
+public class resposta_tela implements OnTouchListener {
 
     private final GestureDetector gestureDetector;
 
-    public OnSwipeTouchListener (Context ctx){
+    public resposta_tela(Context ctx){
         gestureDetector = new GestureDetector(ctx, new GestureListener());
     }
 
@@ -41,9 +40,9 @@ public class OnSwipeTouchListener implements OnTouchListener {
                 if (Math.abs(diffX) > Math.abs(diffY)) {
                     if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
                         if (diffX > 0) {
-                            onSwipeRight();
+                            m_direita();
                         } else {
-                            onSwipeLeft();
+                            m_esquerda();
                         }
                     }
                     result = true;
@@ -52,7 +51,7 @@ public class OnSwipeTouchListener implements OnTouchListener {
                     if (diffY > 0) {
                         onSwipeBottom();
                     } else {
-                        onSwipeTop();
+                        m_cima();
                     }
                 }
                 result = true;
@@ -64,13 +63,13 @@ public class OnSwipeTouchListener implements OnTouchListener {
         }
     }
 
-    public void onSwipeRight() {
+    public void m_direita() {
     }
 
-    public void onSwipeLeft() {
+    public void m_esquerda() {
     }
 
-    public void onSwipeTop() {
+    public void m_cima() {
     }
 
     public void onSwipeBottom() {

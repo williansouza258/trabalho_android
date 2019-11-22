@@ -1,12 +1,12 @@
-package com.yuri.swipeapp.enums;
+package com.willian.trabalho.enums;
 
-public enum OptionEnum {
+public enum optionEnum {
     YES("SIM"),
     NO("NÃO");
 
     private String option;
 
-    OptionEnum(String option) {
+    optionEnum(String option) {
         this.option = option;
     }
 

@@ -1,23 +1,18 @@
+//region usings
 package com.willian.trabalho.entity;
+//endregion
 
-/**
- * Classe de opção da pergunta
- */
-public class Option {
+public class Opcao {
 
-    private String text;
+    private String texto;
     private boolean  isCorrect = false;
 
-    /**
-     * Função para obter o texto da opção
-     * @return
-     */
-    public String getText() {
-        return text;
+    public String get_texto() {
+        return texto;
     }
 
-    public Option(String text, boolean isCorrect) {
-        this.text = text;
+    public Opcao(String texto, boolean isCorrect) {
+        this.texto = texto;
         this.isCorrect = isCorrect;
     }
 }

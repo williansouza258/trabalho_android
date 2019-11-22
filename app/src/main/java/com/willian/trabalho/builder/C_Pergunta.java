@@ -1,25 +1,30 @@
+// region usings
 package com.willian.trabalho.builder;
-
 import com.willian.trabalho.entity.Pergunta;
-import com.willian.trabalho.enums.OptionEnum;
-import com.willian.trabalho.enums.QuestionTypeEnum;
-
+import com.willian.trabalho.enums.tipo_pergunta_Enum;
+import com.willian.trabalho.enums.optionEnum;
 import java.util.ArrayList;
 import java.util.List;
+// endregion
 
-/**
- * Classe construtora de perguntas
- */
-public class QuestionsBuilder {
+public class C_Pergunta {
 
     public List<Pergunta> build() {
         List<Pergunta> perguntas = new ArrayList<>();
-        perguntas.add(new Pergunta("Qual o seu jogo favorito?", QuestionTypeEnum.SINGLE).addOption("uno", false));
-        perguntas.add(new Pergunta("Qual o seu hotel favorito?", QuestionTypeEnum.SINGLE).addOption("plaza", false));
-        perguntas.add(new Pergunta("Qual o seu carro favorito?", QuestionTypeEnum.SINGLE).addOption("audi", false));
-        perguntas.add(new Pergunta("1 + 1 = 2?", QuestionTypeEnum.MULTIPLE)
-                .addOption(OptionEnum.YES.getOption(), true)
-                .addOption(OptionEnum.NO.getOption(), false)
+
+        perguntas.add(new Pergunta("Fusca é um carro?", tipo_pergunta_Enum.MULTIPLE)
+                .add_opcao(optionEnum.YES.getOption(), true)
+                .add_opcao(optionEnum.NO.getOption(), false)
+        );
+
+        perguntas.add(new Pergunta("O cavalo de Napoleão era branco?", tipo_pergunta_Enum.MULTIPLE)
+                .add_opcao(optionEnum.YES.getOption(), true)
+                .add_opcao(optionEnum.NO.getOption(), false)
+        );
+
+        perguntas.add(new Pergunta("Porto Alegre é capital do RS?", tipo_pergunta_Enum.MULTIPLE)
+                .add_opcao(optionEnum.YES.getOption(), true)
+                .add_opcao(optionEnum.NO.getOption(), false)
         );
 
         return perguntas;
