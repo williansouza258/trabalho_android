@@ -49,7 +49,7 @@ public class resposta_tela implements OnTouchListener {
                 }
                 else if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
                     if (diffY > 0) {
-                        onSwipeBottom();
+                        m_baixo();
                     } else {
                         m_cima();
                     }
@@ -72,6 +72,6 @@ public class resposta_tela implements OnTouchListener {
     public void m_cima() {
     }
 
-    public void onSwipeBottom() {
+    public void m_baixo() {
     }
 }

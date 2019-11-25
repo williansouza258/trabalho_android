@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
 
             @Override
-            public void onSwipeBottom() { // Sim / Confirmar
-                super.onSwipeBottom();
+            public void m_baixo() {//s
+                super.m_baixo();
                 if (pergunta.get_tipo() == tipo_pergunta_Enum.MULTIPLE && pergunta.get_resposta() == null) {
                     pergunta.set_resposta(optionEnum.YES.getOption());
                     Toast.makeText(getApplicationContext(), getString(R.string.resposta_escolhida, getString(R.string.sim)), Toast.LENGTH_LONG).show();
@@ -73,14 +73,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void m_cima() { // Não
+            public void m_cima() {//n
                 super.m_cima();
                 if (pergunta.get_tipo() == tipo_pergunta_Enum.MULTIPLE && pergunta.get_resposta() == null) {
                     pergunta.set_resposta(optionEnum.NO.getOption());
             }
                     Toast.makeText(getApplicationContext(), getString(R.string.resposta_escolhida, getString(R.string.nao)), Toast.LENGTH_LONG).show();
-//                } else if (pergunta.get_resposta() != null) {
-//                    Toast.makeText(getApplicationContext(), getString(R.string.resposta_vazia), Toast.LENGTH_LONG).show();
                 }
         });
     }
@@ -111,15 +109,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//reseta o index de perguntas
+    //controla o array
     private void resetar_index() {
-//        int teste = perguntas.size();
-//        int indeaaa = index;
-
         if (index > (perguntas.size() - 1) ) {
             index = 2;
         }
-       
+
         if(index < 0){
             index = 0;
         }

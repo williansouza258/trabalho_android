@@ -11,7 +11,12 @@
         android:id="@+id/pergunta_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Responda as perguntas"
+        android:text="Para responder as perguntas utilize o guia abaixo: \n
+        Arrastar para Cima: NÃO, \n
+        Arrastar para Baixo: SIM, \n
+        Arrastar para Esquerda: Pergunta Anterior, \n
+        Arrastar para Direita: Proxima Pergunta. \n\n
+        Arraste Para Direita para começar -->   "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
