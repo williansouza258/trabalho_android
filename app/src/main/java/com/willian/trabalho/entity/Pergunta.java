@@ -53,6 +53,12 @@ public class Pergunta {
             return false;
         }
 
-        return opcoes.contains(new Opcao(resposta, true));
+        for (Opcao opcao: opcoes) {
+            if (opcao.texto == resposta && opcao.isCorrect) {
+                return true;
+            }
+        }
+        return false;
+//        return opcoes.contains(new Opcao(resposta, true));
     }
 }

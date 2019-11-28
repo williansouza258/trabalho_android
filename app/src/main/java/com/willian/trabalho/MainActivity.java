@@ -47,29 +47,42 @@ public class MainActivity extends AppCompatActivity {
                     pergunta.set_resposta(optionEnum.YES.getOption());
                     Toast.makeText(getApplicationContext(), getString(R.string.resposta_escolhida, getString(R.string.sim)), Toast.LENGTH_LONG).show();
                 }
-                 if (pergunta.get_tipo() == tipo_pergunta_Enum.SINGLE && pergunta.get_resposta() == null){
-                    String resposta = resposta_et.getText().toString();
-                    if (TextUtils.isEmpty(resposta)) {
-                        resposta_et.requestFocus();
-                        resposta_et.setError(getString(R.string.resposta_vazia));
-                    } else {
-                        pergunta.set_resposta(resposta);
-                        Toast.makeText(getApplicationContext(), getString(R.string.resposta_escolhida, resposta_et.getText()), Toast.LENGTH_LONG).show();
-                    }
-                } else if (pergunta.get_resposta() != null) {
-                    Toast.makeText(getApplicationContext(), getString(R.string.ja_respondida), Toast.LENGTH_LONG).show();
-                }
+//                 if (pergunta.get_tipo() == tipo_pergunta_Enum.SINGLE && pergunta.get_resposta() == null){
+//                    String resposta = resposta_et.getText().toString();
+//                    if (TextUtils.isEmpty(resposta)) {
+//                        resposta_et.requestFocus();
+//                        resposta_et.setError(getString(R.string.resposta_vazia));
+//                    } else {
+//                        pergunta.set_resposta(resposta);
+//                        Toast.makeText(getApplicationContext(), getString(R.string.resposta_escolhida, resposta_et.getText()), Toast.LENGTH_LONG).show();
+//                    }
+//                } else if (pergunta.get_resposta() != null) {
+//                    Toast.makeText(getApplicationContext(), getString(R.string.ja_respondida), Toast.LENGTH_LONG).show();
+//                }
             }
 
             @Override
             public void m_direita() {
-
                 carrega_pergunta("right");
             }
 
             @Override
             public void m_esquerda() {
-                carrega_pergunta("left");
+                if (index >= perguntas.size()) {
+                    int respostasCorretas = 0;
+                    for(Pergunta pergunta: perguntas){
+                        String resposta = pergunta.get_resposta().resposta;
+                        boolean estaCorreto = pergunta.confere_resposta(resposta);
+                        if (estaCorreto) {
+                            respostasCorretas++;
+                        }
+                    }
+                    pergunta_tv.setText("Você acertou " + Integer.toString(respostasCorretas));
+                    //Toast.makeText(getApplicationContext(), Integer.toString(respostasCorretas), Toast.LENGTH_LONG).show();
+                } else {
+                    carrega_pergunta("left");
+                }
+
             }
 
             @Override

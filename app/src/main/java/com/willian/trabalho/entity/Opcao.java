@@ -4,8 +4,8 @@ package com.willian.trabalho.entity;
 
 public class Opcao {
 
-    private String texto;
-    private boolean  isCorrect = false;
+    public String texto;
+    public boolean  isCorrect = false;
 
     public String get_texto() {
         return texto;
