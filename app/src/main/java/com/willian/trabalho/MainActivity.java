@@ -47,18 +47,6 @@ public class MainActivity extends AppCompatActivity {
                     pergunta.set_resposta(optionEnum.YES.getOption());
                     Toast.makeText(getApplicationContext(), getString(R.string.resposta_escolhida, getString(R.string.sim)), Toast.LENGTH_LONG).show();
                 }
-//                 if (pergunta.get_tipo() == tipo_pergunta_Enum.SINGLE && pergunta.get_resposta() == null){
-//                    String resposta = resposta_et.getText().toString();
-//                    if (TextUtils.isEmpty(resposta)) {
-//                        resposta_et.requestFocus();
-//                        resposta_et.setError(getString(R.string.resposta_vazia));
-//                    } else {
-//                        pergunta.set_resposta(resposta);
-//                        Toast.makeText(getApplicationContext(), getString(R.string.resposta_escolhida, resposta_et.getText()), Toast.LENGTH_LONG).show();
-//                    }
-//                } else if (pergunta.get_resposta() != null) {
-//                    Toast.makeText(getApplicationContext(), getString(R.string.ja_respondida), Toast.LENGTH_LONG).show();
-//                }
             }
 
             @Override
